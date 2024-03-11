@@ -1,4 +1,4 @@
-# MyMusic
+# WeatherNow
 
 _This is an application for get the weather forecast information of your current location. It consumes information
 from Weather Forecast Api of open-meteo.com_
