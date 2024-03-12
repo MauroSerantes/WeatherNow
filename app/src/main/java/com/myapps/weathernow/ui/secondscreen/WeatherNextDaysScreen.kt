@@ -68,7 +68,7 @@ fun WeatherNextDaysScreen(
                                 time = it.time,
                                 icon = it.weatherType.iconRes,
                                 temperature = it.temperatureCelsius,
-                                backgroundColor = LightBlue
+                                isSelected = true
                             )
                         }
                         else{
@@ -76,7 +76,7 @@ fun WeatherNextDaysScreen(
                                 time = it.time,
                                 icon = it.weatherType.iconRes,
                                 temperature = it.temperatureCelsius,
-                                backgroundColor = Color.White
+                                isSelected = false
                             )
                         }
                     }

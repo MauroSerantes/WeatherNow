@@ -42,12 +42,6 @@ fun WeatherCard(
         modifier = modifier
             .padding(15.dp),
         shape = RoundedCornerShape(15.dp),
-        colors = CardColors(
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent
-        )
     ){
         Column(
             modifier = Modifier

@@ -59,7 +59,7 @@ fun WeatherNowTheme(
         SideEffect {
             val window = (view.context as Activity).window
             window.statusBarColor = Color(0xFF93A5CF).toArgb()
-            window.navigationBarColor =  Color(0xFFE4EfE9).toArgb()
+            window.navigationBarColor =  Color(0xFF93A5CF).toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }

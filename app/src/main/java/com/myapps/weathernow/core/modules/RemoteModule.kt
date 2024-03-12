@@ -33,10 +33,4 @@ object RemoteModule {
     fun providesFusedLocationTracker(app:Application):FusedLocationProviderClient{
         return LocationServices.getFusedLocationProviderClient(app)
     }
-
-    @Provides
-    @Singleton
-    fun providesNetworkObserver(app:Application): NetworkObserver {
-        return NetworkObserver(app)
-    }
 }

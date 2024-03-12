@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import com.myapps.weathernow.domain.weather.WeatherInfo
 import com.myapps.weathernow.ui.navigation.Screen
 import com.myapps.weathernow.ui.common.WeatherPerHour
+import com.myapps.weathernow.ui.ui.theme.DepthBlue
 import com.myapps.weathernow.ui.ui.theme.LightBlue
 
 @Composable
@@ -43,12 +44,14 @@ fun WeatherDayForecast(
             ){
                 Text("TODAY",
                     fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .padding(start = 10.dp)
                 )
                 Text(text = "Next 7 days",
                     fontSize = 18.sp,
                     textDecoration = TextDecoration.Underline,
-                    color = LightBlue,
+                    color = Color(0xFF2E3192),
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .clickable(enabled = true){
@@ -64,7 +67,8 @@ fun WeatherDayForecast(
                         time = it.time,
                         icon = it.weatherType.iconRes,
                         temperature = it.temperatureCelsius,
-                        backgroundColor = Color.White
+                        modifier = Modifier,
+                        isSelected = false
                     )
                 }
             })

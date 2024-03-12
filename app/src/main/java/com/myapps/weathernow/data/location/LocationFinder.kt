@@ -8,23 +8,17 @@ import android.location.Location
 import android.location.LocationManager
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LastLocationRequest
-import com.myapps.weathernow.data.utils.ConnectivityObserver
 import com.myapps.weathernow.domain.location.LocationTracker
 import com.myapps.weathernow.domain.utils.Errors
 import com.myapps.weathernow.utils.DataStatus
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.suspendCancellableCoroutine
-import java.lang.Error
-import java.util.concurrent.Flow
 import javax.inject.Inject
 
 
 class LocationFinder @Inject constructor(
     private val locationClient:FusedLocationProviderClient,
-    private val application:Application,
-    private val connectivityObserver: ConnectivityObserver
+    private val application:Application
 ): LocationTracker {
 
     @OptIn(ExperimentalCoroutinesApi::class)

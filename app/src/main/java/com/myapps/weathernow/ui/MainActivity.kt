@@ -8,11 +8,17 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
+import com.myapps.weathernow.R
+import com.myapps.weathernow.ui.common.WeatherPerHour
 import com.myapps.weathernow.ui.navigation.NavigationGraph
 import com.myapps.weathernow.ui.ui.theme.WeatherNowTheme
 import com.myapps.weathernow.utils.TimeUpdater
@@ -57,6 +63,7 @@ class MainActivity : ComponentActivity() {
        ))
 
 
+
         setContent {
             WeatherNowTheme {
                 Surface(
@@ -87,6 +94,7 @@ class MainActivity : ComponentActivity() {
         job.cancel()
     }
 }
+
 
 
 
