@@ -27,9 +27,7 @@ Also, the application can display hourly weather notifications of the last locat
 #### Here some video of the Weahter Now app remaster
 
 
-
-
-
+[![WeatherNow](https://drive.google.com/file/d/1El3gUuImZKY9px2A7Yro2pnMIQSIpWxG/view?usp=sharing)](https://drive.google.com/file/d/137QUnMLDQ_aJqJtryUVBSMdkdHfPd1Sp/view?usp=sharing)
 
 ## Tech Stack Used And Architectural pattern ⚙️
 * Jetpack Compose - For the views
