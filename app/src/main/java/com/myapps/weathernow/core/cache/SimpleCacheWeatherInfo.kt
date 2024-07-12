@@ -1,9 +1,8 @@
 package com.myapps.weathernow.core.cache
 
 import androidx.compose.runtime.mutableStateOf
-import com.myapps.weathernow.domain.weather.WeatherInfo
-import kotlinx.coroutines.flow.emptyFlow
+import com.myapps.weathernow.domain.weather.WeatherInfoModel
 
 object SimpleCacheWeatherInfo {
-    val weatherInfoState = mutableStateOf<WeatherInfo?>(value = null)
+    val weatherInfoState = mutableStateOf<WeatherInfoModel?>(value = null)
 }

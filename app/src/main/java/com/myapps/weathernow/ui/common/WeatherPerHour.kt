@@ -28,6 +28,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.myapps.weathernow.ui.ui.theme.Gold
+import com.myapps.weathernow.ui.ui.theme.OceanBlueSoft
+import com.myapps.weathernow.ui.ui.theme.Platinum
 import com.myapps.weathernow.utils.toStringFormatterHours
 import java.time.LocalDateTime
 
@@ -40,50 +43,37 @@ fun WeatherPerHour(
     isSelected:Boolean,
     modifier: Modifier = Modifier
 ){
-    val borderColor = if(!isSelected){
-        Color.White
-    } else Color(0xFF2E3192)
 
     Card(
         modifier = modifier
-            .width(140.dp)
-            .padding(15.dp)
-            .clip(RoundedCornerShape(15.dp))
-            .background(
-                brush = Brush.linearGradient(
-                    listOf(
-                        Color(0xFFEA8D8D),
-                        Color(0xFFA890FE)
-                    )
-                )
-            )
-            .border(3.dp, borderColor, RoundedCornerShape(15.dp)),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent)
+            .width(100.dp)
+            .padding(10.dp),
+        colors = CardDefaults.cardColors(if(isSelected) Gold else OceanBlueSoft),
+        elevation = CardDefaults.cardElevation(10.dp)
     ){
         Column(
             modifier = Modifier
-                .padding(10.dp)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ){
+            Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = time.toStringFormatterHours(),
-                color = Color.Black,
-                fontSize = 18.sp
+                color = Platinum,
+                fontSize = 16.sp
             )
-            Spacer(modifier = Modifier.height(12.dp))
             Image(
                 painter = painterResource(id = icon),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(80.dp)
+                    .size(55.dp)
             )
-            Spacer(modifier = Modifier.height(12.dp))
-            Text("$temperature °",
-                fontSize = 20.sp,
+            Text("${temperature.toInt()}°",
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
+            Spacer(modifier = Modifier.height(20.dp))
         }
     }
 

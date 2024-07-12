@@ -1,19 +1,29 @@
 package com.myapps.weathernow.core.modules
 
-import com.myapps.weathernow.data.location.LocationFinder
-import com.myapps.weathernow.domain.location.LocationTracker
-import dagger.Binds
+import android.app.Application
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.myapps.weathernow.data.remote.location.LocationFinder
+import com.myapps.weathernow.data.remote.location.service.LocationTracker
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Singleton
 
-@ExperimentalCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class LocationModule {
-    @Binds
+object LocationModule {
+    @Provides
     @Singleton
-    abstract fun bindLocationTracker(locationFinder: LocationFinder):LocationTracker
+    fun providesFusedLocationTracker(app:Application):FusedLocationProviderClient{
+        return LocationServices.getFusedLocationProviderClient(app)
+    }
+
+    @Provides
+    @Singleton
+    fun providesLocationTracker(
+        locationClient:FusedLocationProviderClient,
+        app: Application
+    ): LocationTracker = LocationFinder(locationClient,app)
 }

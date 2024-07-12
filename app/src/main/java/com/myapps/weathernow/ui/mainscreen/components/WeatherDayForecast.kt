@@ -12,6 +12,9 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,60 +23,84 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.myapps.weathernow.domain.weather.WeatherInfo
+import com.myapps.weathernow.domain.weather.WeatherHourlyModel
+import com.myapps.weathernow.domain.weather.WeatherInfoModel
 import com.myapps.weathernow.ui.navigation.Screen
 import com.myapps.weathernow.ui.common.WeatherPerHour
-import com.myapps.weathernow.ui.ui.theme.DepthBlue
+import com.myapps.weathernow.ui.ui.theme.BrilliantBlue
 import com.myapps.weathernow.ui.ui.theme.LightBlue
+import java.time.LocalDateTime
 
 @Composable
 fun WeatherDayForecast(
-    weatherInfo:WeatherInfo,
+    weatherInfo: WeatherInfoModel,
     navController: NavController,
     modifier: Modifier = Modifier
-){
+) {
 
-   weatherInfo.weatherPerDay[0]?.let {
-        Column(modifier = modifier){
+    val currentTime by remember {
+        mutableStateOf<LocalDateTime>(LocalDateTime.now())
+    }
+    val weatherNow by remember {
+        mutableStateOf(
+            if (currentTime.hour == 23 && currentTime.minute >= 30) {
+                weatherInfo.weatherPerDay[1]?.get(0)
+            } else {
+                weatherInfo.weatherPerDay[0]?.find {
+                    (it.time.hour == currentTime.hour && currentTime.minute < 30) ||
+                            (it.time.hour == currentTime.hour + 1)
+                }
+            }
+        )
+    }
+
+    weatherInfo.weatherPerDay[0]?.let {
+        Column(modifier = modifier) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(15.dp),
+                    .padding(horizontal = 15.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
-            ){
-                Text("TODAY",
+            ) {
+                Text(
+                    "Today",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 10.dp)
+                    color = Color.White
                 )
-                Text(text = "Next 7 days",
-                    fontSize = 18.sp,
+                Text(text = "Next 7 days >",
+                    fontSize = 16.sp,
                     textDecoration = TextDecoration.Underline,
-                    color = Color(0xFF2E3192),
+                    color = BrilliantBlue,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
-                        .clickable(enabled = true){
+                        .clickable(enabled = true) {
                             navController.navigate(Screen.NextDaysWeatherScreen.route)
                         }
                 )
             }
-
-            Spacer(modifier = Modifier.height(10.dp))
-            LazyRow(content ={
-                items(it){
-                    WeatherPerHour(
-                        time = it.time,
-                        icon = it.weatherType.iconRes,
-                        temperature = it.temperatureCelsius,
-                        modifier = Modifier,
-                        isSelected = false
-                    )
+            LazyRow(content = {
+                items(weatherInfo.weatherPerDay[0]!!) {
+                    if (it == weatherNow) {
+                        WeatherPerHour(
+                            time = it.time,
+                            icon = it.weatherType.iconRes,
+                            temperature = it.temperatureCelsius,
+                            isSelected = true
+                        )
+                    } else {
+                        WeatherPerHour(
+                            time = it.time,
+                            icon = it.weatherType.iconRes,
+                            temperature = it.temperatureCelsius,
+                            isSelected = false
+                        )
+                    }
                 }
             })
         }
-   }
+    }
 }
 
 

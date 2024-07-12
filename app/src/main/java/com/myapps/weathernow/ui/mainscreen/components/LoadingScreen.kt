@@ -21,6 +21,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
@@ -29,13 +30,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.myapps.weathernow.ui.ui.theme.LightBlue
+import com.myapps.weathernow.ui.ui.theme.Magenta
 import kotlinx.coroutines.delay
 
 
 @Composable
 fun LoadingScreen(
     modifier: Modifier = Modifier,
-    loadingText:String,
+    loadingText: String,
     circleSize: Dp = 45.dp,
     circleColor: Color = LightBlue,
     spaceBetween: Dp = 12.dp,
@@ -49,7 +51,7 @@ fun LoadingScreen(
 
     circles.forEachIndexed { index, animatable ->
         LaunchedEffect(key1 = animatable) {
-           delay(index * 100L)
+            delay(index * 100L)
             animatable.animateTo(
                 targetValue = 1f,
                 animationSpec = infiniteRepeatable(
@@ -74,7 +76,7 @@ fun LoadingScreen(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ){
+    ) {
         Row(horizontalArrangement = Arrangement.spacedBy(spaceBetween)) {
             circleValues.forEachIndexed { index, value ->
                 Box(modifier = Modifier
@@ -83,7 +85,12 @@ fun LoadingScreen(
                         translationY = -value * distance
                     }
                     .background(color = circleColor, shape = CircleShape)
-                    .border(1.dp, color = Color.White, shape = CircleShape)
+                    .border(1.dp, brush = Brush.linearGradient(
+                        colorStops = arrayOf(
+                            0.15f to LightBlue,
+                            0.85f to  Magenta
+                        )
+                    ), shape = CircleShape)
                 )
             }
         }
@@ -93,6 +100,7 @@ fun LoadingScreen(
             text = loadingText,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
+            color = Color.White
         )
     }
 
