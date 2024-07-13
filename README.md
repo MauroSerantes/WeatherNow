@@ -24,10 +24,14 @@ location premissions not granted or the gps is not activated.
 
 Also, the application can display hourly weather notifications of the last location obtained by Gps.
 
-#### Here some video of the Weahter Now app remaster
+#### Here some screenshots of the app
+
+![Screenshot_20240712_230148](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348)
+![Screenshot_20240712_230225](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f)
+![Screenshot_20240712_230731](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db)
 
 
-[![WeatherNow](https://drive.google.com/file/d/1El3gUuImZKY9px2A7Yro2pnMIQSIpWxG)](https://drive.google.com/file/d/137QUnMLDQ_aJqJtryUVBSMdkdHfPd1Sp)
+
 
 ## Tech Stack Used And Architectural pattern ⚙️
 * Jetpack Compose - For the views
