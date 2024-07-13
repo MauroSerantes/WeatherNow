@@ -29,8 +29,11 @@ Also, the application can display hourly weather notifications of the last locat
 ![Screenshot_20240712_230148](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348)
 ![Screenshot_20240712_230225](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f)
 ![Screenshot_20240712_230731](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db)
-
-
+![Screenshot_20240712_230625](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad)
+![Screenshot_20240712_230703](https://github.com/user-attachments/assets/b09f44fa-c775-4d60-b5a2-19ecb4794dc6)
+![Screenshot_20240712_230807](https://github.com/user-attachments/assets/3c0d0cb9-2a74-4f46-bf1a-0a8b78264ef6)
+![Screenshot_20240712_230910](https://github.com/user-attachments/assets/b437d3eb-6ec7-495b-bfaf-6b13dfbe2b36)
+![Screenshot_20240712_231320](https://github.com/user-attachments/assets/aef709c4-3905-49d6-afa4-f4233a3f1267)
 
 
 ## Tech Stack Used And Architectural pattern ⚙️
