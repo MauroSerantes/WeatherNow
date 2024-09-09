@@ -30,7 +30,6 @@ The app is built with a **single activity architecture** using **Jetpack Compose
 - 🛠️ **Offline Access**: Cached weather data for use without an internet connection.
 - 🚀 **Performance**: Optimized for smooth navigation and quick data retrieval.
 
-Copiar código
 ## Tech Stack Used ⚙️
 - **Kotlin** - The main language for development.
 - **Jetpack Compose** - UI development with modern declarative approach.
