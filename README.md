@@ -1,53 +1,108 @@
 # WeatherNow
 
-_This is an application for get the weather forecast information of your current location. It consumes information
-from Weather Forecast Api of open-meteo.com_
+_A simple, efficient, and visually appealing weather app built with Jetpack Compose. Get real-time weather updates and forecasts for your current location or any city you search for, powered by Open-Meteo API._
 
 ## About the app 📋
 
-The application is single activity because it was design using Jetpack Compose for the UI.
+WeatherNow is a weather forecast app designed to provide current weather conditions and forecasts for the next week. It uses the Open-Meteo API to deliver accurate weather data based on your location or a city you search for.
 
-There are four principal screens, in wichs you can navigate using navigation component.
+The app is built with a **single activity architecture** using **Jetpack Compose**, and follows the **MVVM pattern** to maintain clean separation of concerns and reusability. It also includes caching mechanisms for offline access.
 
-The main screen shows a card with the principal information of the weahter at the current 
-moment, suchs as the temperature , wind pressure , humidity, wind speed and a chart of the evolution
-of the temperature at every hour. Then it shows a display of the weather code images.
+### Key Features:
+- **Real-time weather data**: Get live updates on temperature, wind speed, pressure, and more.
+- **7-day forecast**: View detailed weather predictions for the coming week.
+- **Search for any city**: Find weather information for any location by name.
+- **Error handling**: Friendly messages are displayed for network issues or location permission errors.
+- **Weather notifications**: Receive hourly notifications based on the last retrieved location.
+- **Offline access**: Cached weather data ensures the app works even without a network connection.
 
-The second screen shows the basic weather information of the next week in the same location. It is a summary
-with the minimun and maximun temperature and the weather code of the day.
+## Screenshots 📱
 
-I recently added the search screen and the other places weather screen.Now you can search by 
-text differents cities  and check its current and weekly weather.
-
-The app is prepared to show some errors messages when somethig goes wrong, like network connectivity,
-location premissions not granted or the gps is not activated.
-
-Also, the application can display hourly weather notifications of the last location obtained by Gps.
-
-#### Here some screenshots of the app
-
-![Screenshot_20240712_230148](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348)
-![Screenshot_20240712_230225](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f)
-![Screenshot_20240712_230731](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db)
-![Screenshot_20240712_230625](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad)
-![Screenshot_20240712_230703](https://github.com/user-attachments/assets/b09f44fa-c775-4d60-b5a2-19ecb4794dc6)
-![Screenshot_20240712_230807](https://github.com/user-attachments/assets/3c0d0cb9-2a74-4f46-bf1a-0a8b78264ef6)
-![Screenshot_20240712_230910](https://github.com/user-attachments/assets/b437d3eb-6ec7-495b-bfaf-6b13dfbe2b36)
-![Screenshot_20240712_231320](https://github.com/user-attachments/assets/aef709c4-3905-49d6-afa4-f4233a3f1267)
+| Current Weather | Weekly Forecast | City Search | Notifications |
+| --------------- | --------------- | ----------- | ------------- |
+| ![Current Weather](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348) | ![Weekly Forecast](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f) | ![City Search](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db) | ![Notifications](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad) |
 
 
-## Tech Stack Used And Architectural pattern ⚙️
-* Jetpack Compose - For the views
-* Navigation Component with Compose- For simple navigation between screens
-* MVVM(Model-View-ViewModel) - Main Architecture pattern
-* Dagger HILT - For dependency injection
-* Kotlin - The main language
-* Simple Cache for Weahter information
-* Room - For local data storage
-* Retrofit - For easy consume of RESTful APIs in Android application.
-* Fused Location Provider
-* Permissions Handler
-* Notifications Manager
+
+Para mejorar el README de tu proyecto WeatherNow, te recomiendo seguir una estructura clara, concisa y profesional que no solo describa las funcionalidades, sino que también sea atractiva para otros desarrolladores o potenciales colaboradores. Aquí hay algunas sugerencias:
+
+1. Título y Descripción Breve
+Usa un título destacado y una descripción concisa que capte el propósito de la app en pocas líneas.
+markdown
+Copiar código
+# WeatherNow 🌤️
+A simple, efficient, and visually appealing weather app built with Jetpack Compose. Get real-time weather updates and forecasts for your current location or any city you search for, powered by Open-Meteo API.
+2. Badges (Opcional)
+Puedes incluir badges para mostrar información relevante, como el estado del build, licencia, versiones, etc.
+
+markdown
+Copiar código
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-android-blue)
+3. Índice
+Agrega un índice si el README es largo, esto ayuda a la navegación.
+
+markdown
+Copiar código
+## Table of Contents
+1. [About the App](#about-the-app)
+2. [Screenshots](#screenshots)
+3. [Features](#features)
+4. [Tech Stack](#tech-stack)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Authors](#authors)
+8. [License](#license)
+4. About the App (Más Detallado)
+Aquí debes ser más descriptivo, pero claro. Enfatiza el objetivo de la app y sus características clave.
+
+markdown
+Copiar código
+## About the App 📋
+WeatherNow is a weather forecast app designed to provide current weather conditions and forecasts for the next week. It uses the Open-Meteo API to deliver accurate weather data based on your location or a city you search for.
+
+The app is built with a **single activity architecture** using **Jetpack Compose**, and follows the **MVVM pattern** to maintain clean separation of concerns and reusability. It also includes caching mechanisms for offline access.
+
+### Key Features:
+- **Real-time weather data**: Get live updates on temperature, wind speed, pressure, and more.
+- **7-day forecast**: View detailed weather predictions for the coming week.
+- **Search for any city**: Find weather information for any location by name.
+- **Error handling**: Friendly messages are displayed for network issues or location permission errors.
+- **Weather notifications**: Receive hourly notifications based on the last retrieved location.
+- **Offline access**: Cached weather data ensures the app works even without a network connection.
+5. Screenshots
+Asegúrate de que las imágenes sean claras y relevantes, y agrégales una breve descripción.
+
+markdown
+Copiar código
+## Screenshots 📱
+
+| Current Weather | Weekly Forecast | City Search | Notifications |
+| --------------- | --------------- | ----------- | ------------- |
+| ![Current Weather](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348) | ![Weekly Forecast](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f) | ![City Search](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db) | ![Notifications](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad) |
+
+Copiar código
+## Features ✨
+- 🌡️ **Current Weather**: Displays temperature, wind speed, humidity, pressure.
+- 📅 **7-Day Forecast**: Overview of upcoming weather conditions.
+- 🔍 **City Search**: Find weather details by searching for different cities.
+- 🔔 **Notifications**: Weather alerts and hourly notifications for your location.
+- 🛠️ **Offline Access**: Cached weather data for use without an internet connection.
+- 🚀 **Performance**: Optimized for smooth navigation and quick data retrieval.
+
+Copiar código
+## Tech Stack Used ⚙️
+- **Kotlin** - The main language for development.
+- **Jetpack Compose** - UI development with modern declarative approach.
+- **Navigation Component** - For seamless navigation between screens.
+- **MVVM Architecture** - For separation of concerns.
+- **Dagger HILT** - For Dependency Injection.
+- **Retrofit** - To consume RESTful APIs.
+- **Room** - Local database to store weather data.
+- **Fused Location Provider** - To obtain user's location.
+- **Notifications Manager** - For creating weather alerts.
+- **Simple Cache** - To handle offline data.
 
 ## Authors ✒️
 
