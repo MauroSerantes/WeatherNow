@@ -18,9 +18,9 @@ The app is built with a **single activity architecture** using **Jetpack Compose
 
 ## Screenshots 📱
 
-| Current Weather | Weekly Forecast | City Search | Notifications |
-| --------------- | --------------- | ----------- | ------------- |
-| ![Current Weather](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348) | ![Weekly Forecast](https://github.com/user-attachments/assets/044ee45f-43fd-4149-9cf3-d56dc879141f) | ![City Search](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db) | ![Notifications](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad) |
+| Current Weather | Weekly Forecast | City Search | Notifications |  Other Places | 
+| --------------- | --------------- | ----------- | ------------- | ------------- | 
+| ![Current Weather](https://github.com/user-attachments/assets/79eed13c-3a88-4d33-95ae-1ea53d67f348) | ![Weekly Forecast](https://github.com/user-attachments/assets/997996ac-34a7-4f7c-8949-b3e0698c15db) | ![City Search](https://github.com/user-attachments/assets/3c0d0cb9-2a74-4f46-bf1a-0a8b78264ef6) | ![Notifications](https://github.com/user-attachments/assets/4d238397-28b0-451b-83ce-c51905cc36ad) | ![Other Places](https://github.com/user-attachments/assets/aef709c4-3905-49d6-afa4-f4233a3f1267)
 
 ## Features ✨
 - 🌡️ **Current Weather**: Displays temperature, wind speed, humidity, pressure.
